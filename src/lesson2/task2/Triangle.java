@@ -39,6 +39,10 @@ public class Triangle {
         this.partC = partC;
     }
 
+    public double areaTriangle(){
+        return areaTriangle(this);
+    }
+
     public double areaTriangle(Triangle triangle){
 
         //Формула Герона
