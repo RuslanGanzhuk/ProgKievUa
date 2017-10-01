@@ -1,4 +1,4 @@
-package lesson4.task1;
+package lesson4.task1.sortedStudent;
 
 import lesson4.task1.Student;
 

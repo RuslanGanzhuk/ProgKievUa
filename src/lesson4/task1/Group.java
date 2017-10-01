@@ -1,15 +1,29 @@
 package lesson4.task1;
 
+import lesson4.task1.sortedStudent.SortByAge;
+import lesson4.task1.sortedStudent.SortByFirstName;
+import lesson4.task1.sortedStudent.SortByLastName;
+import lesson4.task1.sortedStudent.SortByUnivercity;
+
 import java.util.Arrays;
 
 public class Group {
 
-    private int copasity = 10;
+    private long id;
+    public static final int COPASITY = 10;
     private int checkMax;
     private Student[] groupStudents = new Student[checkMax];
 
+    public Group(long id) {
+        this.id = id;
+    }
+
+    public Group(){
+
+    }
+
     public void add(Student student) throws MyException {
-        if(copasity == checkMax){
+        if(COPASITY == checkMax){
             throw new MyException();
         }
 
@@ -62,6 +76,28 @@ public class Group {
         Arrays.sort(groupStudents,new SortByLastName());
     }
 
+    public void sortStudentByFirstName(){
+        Arrays.sort(groupStudents,new SortByFirstName());
+        for(Student i: groupStudents){
+            System.out.println("Students: " + " Last Name= " + i.getLastName() + " First Name= " + i.getFirstName() + "Univercity= " + i.getUnivercity() + "age= " + i.getAge());
+        }
+    }
+
+    public void sortStudentByAge(){
+        Arrays.sort(groupStudents,new SortByAge());
+
+        for (Student i: groupStudents){
+            System.out.println("Students: " + " Last Name= " + i.getLastName() + " First Name= " + i.getFirstName() + "Univercity= " + i.getUnivercity() + "age= " + i.getAge());
+        }
+    }
+
+    public void sortStudentByUnivercity(){
+        Arrays.sort(groupStudents,new SortByUnivercity());
+        for (Student i: groupStudents) {
+            System.out.println("Students: " + " Last Name= " + i.getLastName() + " First Name= " + i.getFirstName() + "Univercity= " + i.getUnivercity() + "age= " + i.getAge());
+        }
+    }
+
 
     private boolean checkStudent(Student student){
         for (int i = 0; i< groupStudents.length;i++){
@@ -70,6 +106,18 @@ public class Group {
             }
         }
         return false;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public Student[] getGroupStudents() {
+        return groupStudents;
     }
 
     @Override

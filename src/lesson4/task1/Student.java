@@ -1,26 +1,22 @@
 package lesson4.task1;
 
-public class Student extends Person {
+public class Student extends Person{
 
     private String univercity;
     private String faculty;
-    private int groupNumber;
+    private Group group;
 
-    public Student(String firstName, String lastName, int age, boolean sex, String univercity, String faculty, int groupNumber) {
+    public Student(String firstName, String lastName, int age, boolean sex, String univercity, String faculty, Group group) {
         super(firstName, lastName, age, sex);
         this.univercity = univercity;
         this.faculty = faculty;
-        this.groupNumber = groupNumber;
+        this.group = group;
+
     }
 
     public Student() {
     }
 
-    @Override
-    public void getInfo(){
-        System.out.println("Student: " + "Last name: " +this.getLastName()+"\nFirst name: "
-                +this.getFirstName()+ "\nUnivercity: " + univercity + "\nFaculty: " + faculty + "\nGroup: " + groupNumber);
-    }
 
     public String getUnivercity() {
         return univercity;
@@ -38,12 +34,10 @@ public class Student extends Person {
         this.faculty = faculty;
     }
 
-    public int getGroupNumber() {
-        return groupNumber;
+    @Override
+    public String toString(){
+        return super.toString() + " Univercity: " + univercity + "Faculty: " + faculty + " group: " + group.getId();
     }
 
-    public void setGroupNumber(int groupNumber) {
-        this.groupNumber = groupNumber;
-    }
 
 }

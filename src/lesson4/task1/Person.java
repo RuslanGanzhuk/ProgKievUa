@@ -17,10 +17,6 @@ public class Person {
     public Person() {
     }
 
-    public void getInfo(){
-        System.out.println("Person: " + " Name: " + firstName + "\nLast Name: " + lastName
-                           + "\nage: " + age + "\nsex: " + sex);
-    }
 
     public String getFirstName() {
         return firstName;
@@ -61,6 +57,6 @@ public class Person {
                 " ,firstName='" + firstName + '\'' +
                 ", age=" + age +
                 ", sex=" + sex +
-                '}'+ '\n';
+                '}';
     }
 }
